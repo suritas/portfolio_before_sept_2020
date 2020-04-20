@@ -1,6 +1,6 @@
 /* -----GLOBAL VARS----- */
 :root {
---ballstopx: calc(100vw - 99vw);
+--ballstopx: -200px;
 /* main colors */
 
 --color1: #99CC33;/* for WAVE Orig:#99CC33*/
