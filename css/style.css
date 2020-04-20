@@ -1,0 +1,1143 @@
+/* -----GLOBAL VARS----- */
+:root {
+--ballstopx: calc(100vw - 99vw);
+/* main colors */
+
+--color1: #99CC33;/* for WAVE Orig:#99CC33*/
+--color2: #F9A764;/* for WAVE Orig:#F9A764*/
+--color3: #4f4e4e;
+--transparentcolor1: #99CC331F;
+--transparentcolor2: #F9A7647F;
+/* fonts */
+--font1: 'Open Sans', sans-serif;
+--font2: 'Raleway', sans-serif;
+}
+/*Citation for root: use: https://www.w3schools.com/css/css3_variables.asp */
+
+/* SKIP TO CONTENT */
+.skip a{
+  background: white;
+  left: 0;
+  padding: 6px;
+  /* slides down from above */
+  -webkit-transition: top 1s ease-out;
+  -moz-transition: top 1s ease-out;
+  -o-transition: top 1s ease-out;
+  transition: top 1s ease-out;
+  z-index: 1;
+  /*to keep the "skip to content" button above page */
+  position: absolute;
+  top: -100px;
+}
+/* Focus has border, and begins as Skip to Content in the upper left */
+.skip a:focus {
+  position: absolute;
+  border: 2px solid black;
+  top: 0;
+  left: 0;
+}
+
+/* BODY & sections*/
+body{
+  font-family: var(--font1);
+  font-weight: 300;
+  font-style: normal;
+  line-height: 1.2em;
+  font-size: 2em;
+  text-decoration: none;
+  letter-spacing: .06em;
+}
+header{
+  margin: 30px;
+  padding: 10px;
+}
+main{
+  margin: 30px;
+  min-height: calc(100vh - 246px);
+  /* SO FOOTER STAYS AT BOTTOM (minusing a higher px moves it up, minusing a lower one moves it down) */
+}
+
+
+/*Keyframes for logo bounce animation*/
+@-webkit-keyframes bounce {
+  0% {-webkit-transform: translateY(-100px);}
+  10%, 30%, 50%, 100% {-webkit-transform: translateY(0);}
+  20% {-webkit-transform: translateY(-20px);}
+  40% {-webkit-transform: translateY(-5px);}
+  60% {-webkit-transform: translateY(-2px);}
+}
+@-moz-keyframes bounce {
+ 0% {-webkit-transform: translateY(-100px);}
+ 10%, 30%, 50%, 100% {-webkit-transform: translateY(0);}
+ 20% {-webkit-transform: translateY(-20px);}
+ 40% {-webkit-transform: translateY(-5px);}
+ 60% {-webkit-transform: translateY(-2px);}
+}
+@-o-keyframes bounce {
+ 0% {-webkit-transform: translateY(-100px);}
+ 10%, 30%, 50%, 100% {-webkit-transform: translateY(0);}
+ 20% {-webkit-transform: translateY(-20px);}
+ 40% {-webkit-transform: translateY(-5px);}
+ 60% {-webkit-transform: translateY(-2px);}
+}
+@keyframes bounce {
+ 0% {-webkit-transform: translateY(-100px);}
+ 10%, 30%, 50%, 100% {-webkit-transform: translateY(0);}
+ 20% {-webkit-transform: translateY(-20px);}
+ 40% {-webkit-transform: translateY(-5px);}
+ 60% {-webkit-transform: translateY(-2px);}
+}
+/* Citation Bounce:https://www.tutorialspoint.com/css/css_animation_bounce.htm */
+#logo, #resumelogo{
+ position: relative;
+ /* first make a NAME for the animation above */
+ -webkit-animation-name: bounce;
+ -moz-animation-name: bounce;
+ -o-animation-name: bounce;
+ animation-name: bounce;
+ /* DURATION */
+ -webkit-animation-duration: 2s;
+ -moz-animation-duration: 2s;
+ -o-animation-duration: 2s;
+ animation-duration: 2s;
+ /* # of times/SO IT DOESNT REPEAT */
+ -webkit-animation-iteration-count: 1;
+ -moz-animation-iteration-count: 1;
+ -o-animation-iteration-count: 1;
+ animation-iteration-count: 1;
+ /* Stays in final position */
+ -webkit-animation-fill-mode: forwards;
+ -moz-animation-fill-mode: forwards;
+ -o-animation-fill-mode: forwards;
+ animation-fill-mode: forwards;
+}
+#logo{
+  height: 100px;
+  padding-top: 50px;
+}
+#resumelogo{
+  height:20px;
+  padding-top: 0px;
+}
+
+#suritaux{
+  position: absolute;
+  font-size: 50px;
+  padding-bottom: 30px;
+}
+
+header{
+  border-bottom: 3px solid var(--color1);
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+}
+nav a{
+  font-size:11px;
+  color: black;
+  background-color: white;
+  text-decoration: none;
+  padding: 5px 10px 5px 10px;
+}
+nav a:hover, nav a:focus{
+  color:white;
+  background-color: black;
+  /* border: 2px solid black; */
+  padding: 5px 10px 5px 10px;
+  transition: .5s ease-in;
+  outline: none; /* no default blue border when in focus */
+}
+
+nav ul{
+  display:flex;
+  flex-direction: column;  /*DIRECTION MOBILE ONLY */
+  padding-bottom: 10px;
+}
+nav li{
+text-align: center;
+}
+.current {
+font-weight: bold;
+border: 1px solid var(--transparentcolor2);
+padding: 4px 9px 4px 9px;
+}
+
+/*Nav Dropdown */
+#nav a {
+  display: block;
+}
+#nav > ul > li ul {
+  display:flex;
+  flex-direction: row;  /*DIRECTION MOBILE ONLY */
+}
+/* Citation dropdown no float:https://stackoverflow.com/questions/32521032/how-to-create-dropdown-navigationbar-without-float */
+
+.gallery{
+display:flex;
+align-items:center;
+flex-wrap: wrap;
+justify-content: center;
+margin: 30px 50px 0px 50px;
+padding-top: 12vh;
+padding-bottom: 15vh;
+background-image: url(../images/beach-palms.jpg);
+background-attachment: fixed; /* Parallax effect */
+background-position: right;  /* Parallax effect */
+background-repeat: no-repeat; /* Parallax effect */
+background-size: cover;       /* Parallax effect */
+}
+.gallery > a{
+border: 10px var(--transparentcolor2) solid;
+color:black;   /* for WAVE */
+font-size: 18px;  /* for WAVE */
+text-decoration: none;  /* for WAVE */
+text-align: center;  /* for WAVE */
+margin: 10px;
+width: 100px;
+height:100px;
+}
+
+.gallery a:hover{
+border: 10px black solid;
+transition: .5s ease-in;
+}
+
+footer{
+background-color: black;
+font-size: 10px;
+line-height: normal;
+padding:5px;
+/* line-height: 2;
+    padding: 10px; */
+color: white;
+margin: 0px;
+text-align: center;
+}
+
+.desktopfooter, .tabletfooter{
+  display: none;
+}
+.mobilefooter{
+  display: block;
+}
+
+/* mag */
+#smalldesktopmag,#largedesktopmag, #tabletmag{
+  display: none;
+}
+#mobilemag{
+  display: block;
+}
+
+/* --------------------------------WELCOME ONLY--------------------------------------- */
+#image1, #image2, #image3, #image4 {
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+}
+#image1{
+background-image: url(../images/cnbc-logo.png);
+}
+#image2{
+background-image: url(../images/traveler-logo.png);
+}
+/* #image3{
+background-image: url(../images/amazon-logo.png);
+}
+#image4{
+background-image: url(../images/sas-logo.png);
+} */
+/* #image5{
+background-image: url(../images/fish5.jpg);
+}
+#image6{
+background-image: url(../images/fish6.jpg);
+}
+#image7{
+background-image: url(../images/fish7.jpg);
+}
+#image8{
+background-image: url(../images/fish8.jpg);
+}
+#image9{
+background-image: url(../images/fish9.jpg);
+} */
+
+/* #image1:hover{
+background-image: url(../images/fish1.jpg);
+}
+#image2:hover{
+background-image: url(../images/fish2.jpg);
+}
+#image3:hover{
+background-image: url(../images/fish3.jpg);
+}
+#image4:hover{
+background-image: url(../images/fish4.jpg);
+} */
+/* #image5:hover{
+background-image: url(../images/justfutures_logotype.jpg);
+}
+#image6:hover{
+background-image: url(../images/comingsoon.jpg);
+}
+#image7:hover{
+background-image: url(../images/comingsoon.jpg);
+}
+#image8:hover{
+background-image: url(../images/comingsoon.jpg);
+}
+#image9:hover{
+background-image: url(../images/comingsoon.jpg);
+} */
+/* --------------------------------PROCESS ONLY--------------------------------------- */
+
+.top-flexcontainer{
+display:flex;
+flex-direction: column;
+align-items:center;
+flex-wrap: wrap;
+justify-content: center;
+margin: 30px;
+}
+#cnbcphone{
+  width:100%;
+  align-self: center;
+}
+.projecttitle-after{
+  display:none;
+}
+
+/* PROJECT TITLE */
+.projecttitle-before, .projecttitle-after {
+  width: 100%;
+  align-self: center;
+  font-size: 4vw;
+  font-weight:bold;
+  line-height: 1;
+  position: relative;
+  font-family: var(--font2);
+  /* display: inline-block; */
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-bottom:10px;
+  text-align: center;      /* MOBILEONLY */
+  /* Color fallback */
+  color: black;
+  /* -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -o-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  -o-text-fill-color: transparent;
+  text-fill-color: transparent;
+  background-image: url(../images/cnbcbackground.png); */
+  /* background-attachment: fixed; /* Parallax effect */
+  /* background-position: right;  /* Parallax effect */
+  /* background-repeat: no-repeat; /* Parallax effect */
+  /* background-size: cover;       /* Parallax effect */
+}
+
+/* Change the background position to display letter when the black zone isn't here */
+/* .projecttitle-before--no-textzone:before, .projecttitle-after-no-textzone:before {
+  background-position: -.75em 0;
+} */
+/* .projecttitle-before--no-textzone:after, .projecttitle-after-no-textzone:after  {
+  content: none;
+} */
+/* Use Background-size cover for photo background and no-repeat background */
+/* .projecttitle-before--cover,.projecttitle-before--cover:before,
+.projecttitle-after--cover, .projecttitle-after--cover:before {
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: 50% 50%;
+} */
+/* CITATION: Background image text effect https://codepen.io/Jintos/pen/crlxk */
+
+
+/* DESCRIPTION BELOW CONTAINER */
+.top-description{
+color: black; /* make contrast */
+background-color: white; /* make contrast */
+font-family: var(--font2);
+font-size: 16px;
+text-align: center;
+padding-top:10px;
+padding-bottom:20px;
+}
+
+/* STEPS */
+.container{
+display: grid;
+grid-column: 1fr;
+grid-row-gap: 10px;
+padding-top:25px;
+padding-bottom:15px;
+}
+.stepcontent{
+  padding:50px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.stepcontent p {
+  padding-left: 20px;
+  padding-top: 20px;
+  font-size: 16px;
+}
+/* step content flexed with image */
+.step-flexcontainer{
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.stepcontent-before{
+  padding:0px;
+}
+
+.step-fleximage{
+  box-shadow: 0 4px 8px 0 grey;
+  display: block;
+  margin-top: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 65vw;
+}
+.flex-gallery{
+display:flex;
+align-items:left;
+flex-wrap: wrap;
+flex-direction: row;
+justify-content: left;
+}
+.small-flex-paragraph{
+  display: inline-block;
+}
+.small-step-fleximage{
+  box-shadow: 0 4px 8px 0 grey;
+  display: inline-block;
+  margin-top: 15px;
+  /* margin-left: auto;
+  margin-right: auto; */
+  width: 10vw;
+}
+
+/* design reqs*/
+#dr-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#dr-pic-after{
+  align-self: center;
+  margin-top: 10px;
+  width: 35vw;
+  height: auto;
+}
+#dr-pic-before{
+  width:100%;
+  align-self: center;
+}
+#dr-text-before{
+  width:100%;
+  font-size: 13px;
+}
+#priority{
+  font-size: 17px;
+  font-weight: bold;
+}
+
+/* brainstorming */
+#bs-container{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+#bs-text-before{
+  width:100%;
+  font-size: 13px;
+}
+#bs-pic-after{
+  align-self: center;
+  margin-top: 10px;
+  width: 100%;
+  height: auto;
+}
+#bs-pic-after-small{
+  align-self: center;
+  margin-top: 10px;
+  width: 100%;
+  height: auto;
+}
+
+
+
+
+
+
+
+.gif{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30vw;
+}
+
+
+
+/* bold top of bullet list */
+.subtitle {
+  padding:0px;
+  padding-top:2vh;
+  font-weight: bold;
+  letter-spacing: normal;
+}
+/* combo of bullet and bold top part */
+.stepcontent ul{
+  padding-left: 80px;
+  line-height: normal;
+  font-size: 13px;
+  color:var(--color3);
+}
+/* bullet part */
+.stepcontent li{
+  padding-top: 1vw;
+}
+.stepcontentborder{
+  background-color: white;
+  border: 5px solid var(--transparentcolor2);
+  -webkit-background-clip: padding-box; /* Safari */
+  -moz-background-clip: padding-box;
+  -o-background-clip: padding-box;
+  background-clip: padding-box; /* IE9+, Firefox 4+, Opera, Chrome
+  /* Citation:transparent border webkit:https://stackoverflow.com/questions/4062001/can-you-set-a-border-opacity-in-css */
+}
+.steptitle{
+/* grid-column: 2 / span 2; */
+color:var(--color1);
+/* height: 100%; */
+font-size:3vh;
+background-color: white;
+font-weight: bold;
+/* padding:30px 30px 0px 30px; */
+text-transform: uppercase;
+}
+.step1, .step2, .step3, .step4, .step5, .step6, .step7, .step8{
+  font-size:10vh;
+  font-weight: bold;
+  font-family: var(--font2);
+  text-align: center;
+  color:lightgrey;
+  z-index:-1;
+  line-height: normal;
+}
+
+/* FLIPCARDS */
+.flip-card {
+  background-color: transparent;
+  /* height: 40vw; */
+  margin-left: auto;
+  margin-right: auto;
+  width: 10vw;
+  height: 20vw;
+  padding: 20px;
+}
+/* FLIPCARD IMAGES (height MUST STAY SAME AS FLIPCARD) */
+.livetv, .sec15, .cc, .ybar{
+height:20vw;
+box-shadow: 0 4px 8px 0 rgba(0,0,0,4);
+}
+
+.flip-card-inner {
+position: relative;
+width: 100%;
+height: 100%;
+text-align: center;
+-webkit-transition: transform 0.6s;
+-moz-transition: transform 0.6s;
+-o-transition: transform 0.6s;
+transition: transform 0.6s;
+transform-style: preserve-3d;
+}
+.figstate{
+  text-align: center;
+  font-weight: bold;
+  /* padding-top: 10px; */
+  font-size: 10px;
+}
+/* different figstate colors front and back */
+.flip-card-back {
+-webkit-transform: rotateY(180deg);
+-moz-transform: rotateY(180deg);
+-o-transform: rotateY(180deg);
+transform: rotateY(180deg);
+-webkit-animation-name: rotateY(180deg);
+-moz-animation-name: rotateY(180deg);
+-o-animation-name: rotateY(180deg);
+animation-name: rotateY(180deg);
+color: var(--color1);
+}
+.flip-card-front {
+color: grey;
+}
+/* both focus and hover so that accessible for focus only ppl */
+.flip-card:hover .flip-card-inner, .flip-card:focus .flip-card-inner {
+-webkit-transform: rotateY(180deg);
+-moz-transform: rotateY(180deg);
+-o-transform: rotateY(180deg);
+transform: rotateY(180deg);
+
+}
+.flip-card-front, .flip-card-back {
+position: absolute;
+background-color: transparent;
+width: 100%;
+height: 100%;
+/* so orig and redesign dont overlap */
+-webkit-backface-visibility: hidden;
+-moz-backface-visibility: hidden;
+-o-backface-visibility: hidden;
+backface-visibility: hidden;
+}
+/* Flipcard Citation:https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_flip_card */
+/* FLIPCARD RESIZE */
+
+
+/* --------------------------------RESUME ONLY--------------------------------------- */
+/* styles for magnifier image pairs */
+
+/* style for the DIV that holds the image pair */
+
+
+.magnifier {
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 4px 8px 0 grey;
+  display: block;
+  margin-top:20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.dot{
+  height:15px;
+}
+/* style for the DIV that is the magnifier lens */
+.maglens {
+  position: absolute;
+  overflow: hidden;
+  width: 300px;
+  height: 200px;
+}
+
+/* style for the small IMG that appears on the page */
+.magsmall {
+  position: absolute;
+  border-style: none;
+}
+
+/* style for the magnified image, using a clip rectangle */
+.maglarge {
+  position: absolute;
+  border-style: none
+}
+
+
+
+
+
+
+.minititle,.minititle-resume{
+  font-size: 16px;
+  text-align: center;
+}
+/* remove margin top so ball has space */
+.minititle-resume, .minilogo{
+  margin-top: 0px;
+  text-align: center;
+}
+
+#iframe-resume{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top:50px;
+  margin-bottom:50px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,4);
+  width: 50vw;
+  height: 950px;
+
+}
+
+/* --------------------------------ABOUT ONLY--------------------------------------- */
+#about-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px;
+}
+
+#profile-pic-before{
+  width: 100%;
+  align-self: center;
+}
+#about-text{
+  width:100%;
+  font-size: 13px;
+}
+#profile-pic-after{
+  display:none;
+}
+/* Contact Me! */
+h4{
+  font-size: 15px;
+  color: var(--color1);
+  text-align: left;
+  padding-left: 30px;
+  margin-left: inherit;
+  line-height: normal;
+}
+
+/* CONTACT FORM */
+.form-container form{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(7, 40px) 100px 40px ;
+  grid-row-gap: 7px;
+  padding:10px 45px 30px 30px; /*order: top right bottom left */
+  margin: 15px 1vw 30px 1vw;   /*order: top right bottom left */
+  border-radius: 2px;   /* curved border */
+}
+
+label{
+  font-size: 14px;
+  grid-column: 1/span 1;
+  align-items: start;
+}
+
+/* ALL INPUT FIELDS */
+textarea, input[type=text], input[type=email]{
+    border-radius: 3px;   /* curved border */
+    border: 1px solid var(--color3);
+    padding: 10px;
+}
+/* hover */
+textarea:hover, input[type=text]:hover, input[type=email]:hover{
+    border: 2px solid var(--color2);
+}
+/* onclick & while typing */
+textarea:focus, input[type=text]:focus, input[type=email]:focus{
+    border: 2px solid var(--color1);
+    background-color: var(--transparentcolor1);
+    outline: none;  /* no default blue border when in focus */
+}
+
+
+/* SUBMIT BUTTON */
+input[type=submit]{
+  background-color: var(--color1);
+  border: none;
+  color: white;
+  padding: 10px 30px;
+  cursor: pointer;
+}
+input[type=submit]:hover, input[type=submit]:focus{
+  background-color: black;
+  outline: none;  /* no default blue border when in focus */
+
+}
+input[type=submit]:active{
+  background-color: var(--color2);
+
+}
+/*###################################################################################################################TABLET##############################################################################################################*/
+
+/* ---------------------------PROCESS TABLET---------------------------------------------------------- */
+@media all and (min-width: 800px){
+  /* top container: row */
+.top-flexcontainer{
+    flex-direction: row;
+}
+  /* project title in upper right */
+.projecttitle-after{
+    display: flex;
+    align-self: center;
+    text-align: right;
+}
+.projecttitle-before{
+    display:none;
+}
+.projecttitle-after, #cnbcphone{
+    margin: 30px;
+    width:30%;
+}
+
+/* step content flexed with image */
+.step-flexcontainer{
+    flex-direction: row;
+}
+.stepcontent-before{
+    align-self: center;
+    text-align: left;
+}
+.stepcontent-before{
+  margin: 0px;
+  text-indent: 0px;
+  height:auto;
+  width: auto;
+}
+
+/* STEPS*/
+.container{
+grid-template-columns: 10% 90%;
+}
+.stepcontent{
+  grid-column: 2 /span 1;
+}
+.steptitle{
+  grid-column: 2 / span 1;
+}
+.step-fleximage{
+  grid-column: 2 / span 1;
+}
+.stepcontentborder{
+  border: 30px solid var(--transparentcolor2);
+}
+.step1, .step2, .step3, .step4, .step5, .step6, .step7, .step8{
+  grid-column: 1 / span 1;
+  font-size:50vh;
+  text-align: right;
+}
+
+
+/* -----------------------------ABOUT TABLET------------------------------------------------- */
+
+/* about container: row */
+#about-container{
+    flex-direction: row;
+}
+/* profile pic in upper right */
+#profile-pic-after{
+  display: flex;
+  align-self: flex-start;
+  width:30%;
+}
+/* inherit line height from body so not close together */
+#about-text{
+  line-height: inherit;
+}
+/* remove before prof pic */
+#profile-pic-before{
+  display:none;
+}
+#profile-pic-after, #about-text{
+  margin: 30px;
+}
+
+/* CONTACT FORM */
+.form-container form{
+  grid-template-columns: 100px 300px 10vw;
+  grid-template-rows: repeat(8, 40px);
+  padding:10px 100px 30px 100px;/*order: top right bottom left */
+}
+/* ALL INPUT FIELDS */
+textarea, input[type=text], input[type=email]{
+    margin-top: 5px;
+}
+input[type=text], input[type=email]{
+  grid-column: 2/span 1;
+}
+textarea{
+  grid-column: 2/span 2;
+  grid-row: 4/ span 4;
+}
+
+label{
+  font-size: 14px;
+  grid-column: 1/span 1;
+  align-items: start;
+}
+
+
+/* SUBMIT BUTTON */
+input[type=submit]{
+  grid-row: 8/span 1;
+  grid-column: 3/ span 1;
+  border: none;
+  color: white;
+  padding: 10px 30px;
+  cursor: pointer;
+}
+
+
+
+/*-----NAV& footer tablet---------------------------------------------------------------------------*/
+nav{
+padding: 0px;
+display:block;
+margin-right:10px;
+}
+nav ul{
+flex-direction: row;
+}
+nav a{
+font-size:10px;
+}
+/* Dropdown */
+#nav > ul > li {
+  display: inline-block;
+  position: relative;
+}
+#nav > ul > li ul {
+  position: absolute;
+  display: none;
+}
+#nav > ul > li:hover ul {
+  display: block;
+}
+
+/* FOOTER */
+.tabletfooter{
+  display: block;
+}
+.mobilefooter, .desktopfooter{
+  display: none;
+}
+
+/* mag */
+
+#tabletmag{
+  display: block;
+}
+#mobilemag, #largedesktopmag, #smalldesktopmag{
+  display: none;
+}
+}
+
+/*################ SMALL DESKTOP#############################################*/
+@media all and (min-width: 1000px){
+
+/* rolling logo ANIMATION */
+@-webkit-keyframes roll {
+from {transform:rotate(0deg); left:-999px; top:30px;}
+to {transform:rotate(1230deg); left:var(--ballstopx); top:-15px;}
+}
+@-moz-keyframes roll {
+  from {transform:rotate(0deg); left:-999px; top:30px;}
+  to {transform:rotate(1230deg); left:var(--ballstopx); top:-15px;}
+}
+@-o-keyframes roll {
+  from {transform:rotate(0deg); left:-999px; top:30px;}
+  to {transform:rotate(1230deg); left:var(--ballstopx); top:-15px;}
+}
+@keyframes roll {
+  from {transform:rotate(0deg); left:-999px; top:30px;}
+  to {transform:rotate(1230deg); left:var(--ballstopx); top:-15px;}
+}
+#logo{
+height: 120px;
+position: relative;
+padding-top: 0px;
+z-index: 2;
+/* first make a NAME for the animation above */
+-webkit-animation-name: roll;
+-moz-animation-name: roll;
+-o-animation-name: roll;
+animation-name: roll;
+/* duration*/
+-webkit-animation-duration: 3s;
+-moz-animation-duration: 3s;
+-o-animation-duration: 3s;
+animation-duration: 3s;
+/* # of times/SO IT DOESNT REPEAT */
+-webkit-animation-iteration-count: 1;
+-moz-animation-iteration-count: 1;
+-o-animation-iteration-count: 1;
+animation-iteration-count: 1;
+/* Stays in final position */
+-webkit-animation-fill-mode: forwards;
+-moz-animation-fill-mode: forwards;
+-o-animation-fill-mode: forwards;
+animation-fill-mode: forwards;
+}
+/* ---------------------------WELCOME DESKTOP---------------------------------------------------------- */
+
+/* GALLERY */
+.gallery > a{
+width: 300px;
+height: 300px;
+}
+
+/* ---------------------------PROTOTYPE DESKTOP---------------------------------------------------------- */
+/* brainstorming */
+#bs-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#bs-text-before{
+  width:100%;
+  font-size: 13px;
+}
+#bs-pic-after-small{
+  padding-left: 20px;
+  padding-top: 20px;
+  align-self: flex-start;
+  max-height: 200px;
+  width: auto;
+}
+#bs-inner-container1{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+#bs-inner-container2{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+#bs-pic-after{
+  align-self: center;
+  margin-top: 10px;
+  width: 35vw;
+  height: auto;
+}
+
+
+/* ---------------------------ABOUT DESKTOP---------------------------------------------------------- */
+
+/* ABOUT */
+#about-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+#profile-pic-after{
+  align-self: center;
+}
+#about-text{
+  width:100%;
+  font-size: 13px;
+}
+/* CONTACT FORM */
+.form-container form{
+  grid-template-columns: 100px 300px 30vw;
+  grid-template-rows: repeat(8, 40px);
+  padding:10px 100px 30px 100px;/*order: top right bottom left */
+}
+/* email & name FIELDS */
+input[type=text], input[type=email]{
+  grid-column: 2/span 1;
+}
+/* message */
+textarea{
+  grid-column: 2/span 3;
+  grid-row: 4/ span 4;
+}
+
+/* SUBMIT BUTTON */
+input[type=submit]{
+  grid-row: 8/span 1;
+  grid-column: 4/ span 1;
+}
+
+/* ---------------------------NAV & FOOTER---------------------------------------------------------- */
+/* NAV */
+header{
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+}
+nav{
+/* text-align: right; */
+padding: 10px 0px;
+display:inline-block;
+margin-right:10px;
+}
+nav ul{
+flex-direction: row;
+}
+nav a{
+font-size:1vw;
+}
+/* FOOTER */
+.desktopfooter{
+  display: block;
+}
+.tabletfooter, .mobilefooter{
+  display:none;
+}
+
+/* mag */
+#smalldesktopmag{
+  display: block;
+}
+#tabletmag, #mobilemag, #largedesktopmag{
+  display:none;
+}
+
+}/* closing desktop bracket */
+
+/*################ LARGE DESKTOP#############################################*/
+@media all and (min-width: 1300px){
+#largedesktopmag{
+  display: block;
+}
+#tabletmag, #mobilemag, #smalldesktopmag{
+  display:none;
+}
+
+
+
+/* design reqs*/
+#dr-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+#dr-pic-before{
+  width:40vw;
+  align-self:center;
+}
+#dr-text-before{
+  width:100%;
+  font-size: 13px;
+}
+
+}/* closing large desktop bracket */
+
+/* REDUCE MOTION */
+@media screen and (prefers-reduced-motion: reduce){
+html{
+  scroll-behavior: auto; /* Removes scroll animation */
+}
+.skip a{
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  transition: none;
+}
+#logo, #resumelogo{
+  -webkit-animation: none;
+  -moz-animation: none;
+  -o-animation: none;
+  animation: none;
+}
+nav a:hover{
+transition: none;
+}
+.gallery a:hover:nth-child(even), .gallery a:hover:nth-child(odd){
+transition: none;
+}
+.flip-card-inner {
+-webkit-transition: none;
+-moz-transition: none;
+-o-transition: none;
+transition: none;
+}
+
+} /* reduced motion closing bracket */
