@@ -1,6 +1,6 @@
 /* -----GLOBAL VARS----- */
 :root {
---ballstopx: -200px;
+--ballstopx: -300px;
 /* main colors */
 
 --color1: #99CC33;/* for WAVE Orig:#99CC33*/
@@ -477,6 +477,16 @@ justify-content: left;
 
 
 
+#quote {
+  font-style: italic;
+  font-weight: bold;
+  color: var(--color1);
+  text-align: center;
+  padding-left: 30px;
+  padding-top: 20px;
+  font-size: 20px;
+}
+
 
 
 
@@ -492,11 +502,13 @@ justify-content: left;
 
 /* bold top of bullet list */
 .subtitle {
-  padding:0px;
   padding-top:2vh;
   font-weight: bold;
-  letter-spacing: normal;
+  font-size: 20px;
+  color: var(--color1);
 }
+
+
 /* combo of bullet and bold top part */
 .stepcontent ul{
   padding-left: 80px;
