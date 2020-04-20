@@ -561,7 +561,7 @@ text-transform: uppercase;
 }
 /* FLIPCARD IMAGES (height MUST STAY SAME AS FLIPCARD) */
 .livetv, .sec15, .cc, .ybar{
-height:20vw;
+width: 100%;
 box-shadow: 0 4px 8px 0 rgba(0,0,0,4);
 }
 
