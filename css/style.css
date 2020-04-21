@@ -852,7 +852,7 @@ grid-template-columns: 10% 90%;
 
 /* CONTACT FORM */
 .form-container form{
-  grid-template-columns: 100px 300px 10vw;
+  grid-template-columns: 100px 250px 100px;
   grid-template-rows: repeat(8, 40px);
   padding:10px 100px 30px 100px;/*order: top right bottom left */
 }
@@ -1037,7 +1037,7 @@ height: 300px;
 }
 /* CONTACT FORM */
 .form-container form{
-  grid-template-columns: 100px 300px 30vw;
+  grid-template-columns: 100px 250px 20% 100px;
   grid-template-rows: repeat(8, 40px);
   padding:10px 100px 30px 100px;/*order: top right bottom left */
 }
