@@ -621,11 +621,41 @@ backface-visibility: hidden;
 
 
 /* --------------------------------RESUME ONLY--------------------------------------- */
-/* styles for magnifier image pairs */
+#resumebackground{
+  margin: 30px 50px 0px 50px;
+  padding-top: 12vh;
+  padding-bottom: 15vh;
+  background-image: url(../images/beach-palms.jpg);
+  background-attachment: fixed; /* Parallax effect */
+  background-position: right;  /* Parallax effect */
+  background-repeat: no-repeat; /* Parallax effect */
+  background-size: cover;       /* Parallax effect */
+}
 
-/* style for the DIV that holds the image pair */
+.minititle,.minititle-resume{
+  font-size: 16px;
+  text-align: center;
+}
+/* remove margin top so ball has space */
+.minititle-resume, .minilogo{
+  margin-top: 0px;
+  text-align: center;
+}
 
+#iframe-resume{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background-image:url(../images/beach-palms.jpg)
+  /* margin-top: 50px; */
+  /* margin-bottom: 50px; */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1);
+  width: 610px;
+  height: 780px;
 
+}
+/* --------------------------------REDESIGN ONLY--------------------------------------- */
+/*Magnifier*/
 .magnifier {
   overflow: hidden;
   position: relative;
@@ -657,34 +687,6 @@ backface-visibility: hidden;
   position: absolute;
   border-style: none
 }
-
-
-
-
-
-
-.minititle,.minititle-resume{
-  font-size: 16px;
-  text-align: center;
-}
-/* remove margin top so ball has space */
-.minititle-resume, .minilogo{
-  margin-top: 0px;
-  text-align: center;
-}
-
-#iframe-resume{
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top:50px;
-  margin-bottom:50px;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,4);
-  width: 50vw;
-  height: 950px;
-
-}
-
 /* --------------------------------ABOUT ONLY--------------------------------------- */
 #about-container{
   display: flex;
